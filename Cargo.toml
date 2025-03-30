@@ -1,0 +1,24 @@
+[package]
+name = "static-vs-dynamic"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "src/lib.rs"
+
+[[bench]]
+name = "bench"
+path = "src/bench.rs"
+harness = false
+
+[dependencies]
+axum = "0.8.1"
+axum-test = "17.2.0"
+criterion = { version = "0.5", features = ["async_tokio", "html_reports", "tokio"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+tokio = { version = "1.44.1", features = ["rt-multi-thread", "macros"] }
+async-trait = "0.1.77"
+
+[dev-dependencies]
+criterion = "0.5"
